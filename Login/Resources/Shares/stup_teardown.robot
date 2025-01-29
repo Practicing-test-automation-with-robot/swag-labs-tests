@@ -4,5 +4,5 @@ Resource    ../main.robot
 
 *** Keywords ***
 
-Acessar o Site 'X'
-    Dado que...
+# Acessar o Site 'X'
+    # Dado que...

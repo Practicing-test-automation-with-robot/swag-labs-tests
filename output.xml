@@ -1,58 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2025-01-30T21:37:39.555581" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2025-01-31T13:12:35.695892" rpa="false" schemaversion="5">
 <suite id="s1" name="Create Acount" source="c:\small-daily-challenges\small-daily-challenges\create_acount.robot">
-<test id="s1-t1" name="Cenário 1: Login em uma página web usando credenciais básicas" line="39">
+<test id="s1-t1" name="Cenário 1: Login em uma página web usando credenciais básicas" line="37">
 <kw name="Abrir o site na tela de cadastro">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-01-30T21:37:39.766848" level="INFO">Opening browser 'chrome' to base url 'https://www.tumblr.com/register?source=new_to_tumblr'.</msg>
+<msg time="2025-01-31T13:12:35.918756" level="INFO">Opening browser 'chrome' to base url 'https://www.tumblr.com/register?source=new_to_tumblr'.</msg>
 <arg>https://www.tumblr.com/register?source=new_to_tumblr</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-01-30T21:37:39.766583" elapsed="3.045395"/>
+<status status="PASS" start="2025-01-31T13:12:35.918468" elapsed="3.189869"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-01-30T21:37:42.943602" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-31T13:12:39.206807" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-01-30T21:37:42.812327" elapsed="0.131682"/>
+<status status="PASS" start="2025-01-31T13:12:39.108687" elapsed="0.098422"/>
 </kw>
-<status status="PASS" start="2025-01-30T21:37:39.765756" elapsed="3.178449"/>
+<status status="PASS" start="2025-01-31T13:12:35.917416" elapsed="3.289845"/>
 </kw>
 <kw name="Inserir as credenciais básicas de login (email e senha)">
 <kw name="Set Focus To Element" owner="SeleniumLibrary">
-<msg time="2025-01-30T21:37:43.061896" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-01-30T21:37:43.062258" level="FAIL">Element with locator 'id:email' not found.</msg>
 <arg>${input_email}</arg>
 <doc>Sets the focus to the element identified by ``locator``.</doc>
-<status status="FAIL" start="2025-01-30T21:37:42.945337" elapsed="0.160910">Element with locator 'id:email' not found.</status>
+<status status="PASS" start="2025-01-31T13:12:39.208267" elapsed="0.020750"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-31T13:12:39.229722" level="INFO">Typing text 'testesrobotjubaicar@gmail.com' into text field 'name:email'.</msg>
 <arg>${input_email}</arg>
 <arg>testesrobotjubaicar@gmail.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-01-30T21:37:43.106732" elapsed="0.000217"/>
+<status status="PASS" start="2025-01-31T13:12:39.229333" elapsed="0.412329"/>
 </kw>
 <kw name="Set Focus To Element" owner="SeleniumLibrary">
 <arg>${input_password}</arg>
 <doc>Sets the focus to the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-01-30T21:37:43.107210" elapsed="0.000130"/>
+<status status="PASS" start="2025-01-31T13:12:39.642033" elapsed="0.035398"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-01-31T13:12:39.678196" level="INFO">Typing password into text field 'name:password'.</msg>
+<msg time="2025-01-31T13:12:39.717786" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${input_password}</arg>
 <arg>awsedrf456</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-01-30T21:37:43.107536" elapsed="0.000148"/>
+<status status="PASS" start="2025-01-31T13:12:39.677768" elapsed="0.119401"/>
 </kw>
-<status status="FAIL" start="2025-01-30T21:37:42.944889" elapsed="0.163063">Element with locator 'id:email' not found.</status>
+<status status="PASS" start="2025-01-31T13:12:39.207847" elapsed="0.589635"/>
 </kw>
 <kw name="Clicar no botão &quot;Criar conta&quot;">
-<status status="NOT RUN" start="2025-01-30T21:37:43.110018" elapsed="0.000214"/>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-31T13:12:39.798933" level="INFO">Clicking button 'type:submit'.</msg>
+<msg time="2025-01-31T13:12:39.936797" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-31T13:12:39.937272" level="FAIL">Button with locator 'type:submit' not found.</msg>
+<arg>${button_submit}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="FAIL" start="2025-01-31T13:12:39.798650" elapsed="0.142655">Button with locator 'type:submit' not found.</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-01-31T13:12:39.941602" elapsed="0.000102"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-01-31T13:12:39.941824" elapsed="0.000058"/>
+</kw>
+<status status="FAIL" start="2025-01-31T13:12:39.798207" elapsed="0.143798">Button with locator 'type:submit' not found.</status>
 </kw>
 <kw name="Fechar navegador">
-<status status="NOT RUN" start="2025-01-30T21:37:43.111189" elapsed="0.000147"/>
+<status status="NOT RUN" start="2025-01-31T13:12:39.942679" elapsed="0.000101"/>
 </kw>
-<status status="FAIL" start="2025-01-30T21:37:39.764974" elapsed="3.346823">Element with locator 'id:email' not found.</status>
+<status status="FAIL" start="2025-01-31T13:12:35.916747" elapsed="4.026448">Button with locator 'type:submit' not found.</status>
 </test>
-<status status="FAIL" start="2025-01-30T21:37:39.559519" elapsed="3.553876"/>
+<status status="FAIL" start="2025-01-31T13:12:35.700851" elapsed="4.243945"/>
 </suite>
 <statistics>
 <total>

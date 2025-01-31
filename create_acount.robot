@@ -7,15 +7,14 @@ Library    SeleniumLibrary
 *** Variables ***
 # colocar o identificador do elemento, nome, id
 # colocar o tipo do elemento ex: input
-${input_email}    id:email 
-${input_password}    id:password 
-${button_submit}    id:submit 
+${input_email}        name:email 
+${input_password}     name:password 
+${button_submit}      type:submit 
 
 
 *** Keywords ***
 Abrir o site na tela de cadastro
     Open Browser	https://www.tumblr.com/register?source=new_to_tumblr	chrome
-    # Current Frame Should Contain	href="#managed-icon__logo-tumblr"
     Capture Page Screenshot
 
 Inserir as credenciais básicas de login (email e senha)
@@ -25,7 +24,6 @@ Inserir as credenciais básicas de login (email e senha)
     Input Password    ${input_password}    awsedrf456
 
 Clicar no botão "Criar conta"
-    Set Focus To Element	${button_submit}
     Click Button	${button_submit}
     Sleep	2
     Capture Page Screenshot

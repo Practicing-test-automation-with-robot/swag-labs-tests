@@ -21,6 +21,7 @@ ${variavel3}    155455
     # Dentro de uma Keyword pode ter outra Keyword
 Abrir site de letras de músicas do grupo de rap nacional Racinais Mcs
     Open Browser    https://www.letras.mus.br/racionais-mcs/    chrome
+# obs.: a url tem que ser completa com o https
 
 Verificar o título da página
     Sleep    2

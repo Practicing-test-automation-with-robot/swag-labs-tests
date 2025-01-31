@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2025-01-30T21:37:39.555581" rpa="false" schemaversion="5">
+<suite id="s1" name="Create Acount" source="c:\small-daily-challenges\small-daily-challenges\create_acount.robot">
+<test id="s1-t1" name="Cenário 1: Login em uma página web usando credenciais básicas" line="39">
+<kw name="Abrir o site na tela de cadastro">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-30T21:37:39.766848" level="INFO">Opening browser 'chrome' to base url 'https://www.tumblr.com/register?source=new_to_tumblr'.</msg>
+<arg>https://www.tumblr.com/register?source=new_to_tumblr</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-30T21:37:39.766583" elapsed="3.045395"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-01-30T21:37:42.943602" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-01-30T21:37:42.812327" elapsed="0.131682"/>
+</kw>
+<status status="PASS" start="2025-01-30T21:37:39.765756" elapsed="3.178449"/>
+</kw>
+<kw name="Inserir as credenciais básicas de login (email e senha)">
+<kw name="Set Focus To Element" owner="SeleniumLibrary">
+<msg time="2025-01-30T21:37:43.061896" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-30T21:37:43.062258" level="FAIL">Element with locator 'id:email' not found.</msg>
+<arg>${input_email}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-01-30T21:37:42.945337" elapsed="0.160910">Element with locator 'id:email' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${input_email}</arg>
+<arg>testesrobotjubaicar@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-30T21:37:43.106732" elapsed="0.000217"/>
+</kw>
+<kw name="Set Focus To Element" owner="SeleniumLibrary">
+<arg>${input_password}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-30T21:37:43.107210" elapsed="0.000130"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<arg>${input_password}</arg>
+<arg>awsedrf456</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-30T21:37:43.107536" elapsed="0.000148"/>
+</kw>
+<status status="FAIL" start="2025-01-30T21:37:42.944889" elapsed="0.163063">Element with locator 'id:email' not found.</status>
+</kw>
+<kw name="Clicar no botão &quot;Criar conta&quot;">
+<status status="NOT RUN" start="2025-01-30T21:37:43.110018" elapsed="0.000214"/>
+</kw>
+<kw name="Fechar navegador">
+<status status="NOT RUN" start="2025-01-30T21:37:43.111189" elapsed="0.000147"/>
+</kw>
+<status status="FAIL" start="2025-01-30T21:37:39.764974" elapsed="3.346823">Element with locator 'id:email' not found.</status>
+</test>
+<status status="FAIL" start="2025-01-30T21:37:39.559519" elapsed="3.553876"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Create Acount">Create Acount</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -7,9 +7,11 @@ Library    SeleniumLibrary
 *** Variables ***
 # colocar o identificador do elemento, nome, id...
 # colocar o tipo do elemento ex: input
+# Quando os elementos possuem o id ou o name:
 ${input_email}        name:email 
 ${input_password}     name:password 
 
+# utilizando o XPath:
 &{login}
 ...    button_submit_login=//button[@class='TRX6J CxLjL qjTo7 CguuB yC5pj'][contains(.,'Entrar')]
 ...    password=inserir password aqui

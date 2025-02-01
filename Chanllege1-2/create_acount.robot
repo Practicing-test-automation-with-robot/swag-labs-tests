@@ -3,8 +3,6 @@
 *** Settings ***
 Library    SeleniumLibrary
 
-Resource    form.robot
-
 *** Variables ***
 # colocar o identificador do elemento, nome, id...
 # colocar o tipo do elemento ex: input

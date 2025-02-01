@@ -5,25 +5,31 @@ Library    SeleniumLibrary
 
 
 *** Variables ***
+# colocar o identificador do elemento, nome, id...
+# colocar o tipo do elemento ex: input
+${input_email}        name:email 
+${input_password}     name:password 
 
+&{login}
+...    button_submit_login=//button[@class='TRX6J CxLjL qjTo7 CguuB yC5pj'][contains(.,'Entrar')]
+...    password=inserir password aqui
 
 *** Keywords ***
 Abrir o site na tela de login
-    Open Browser	https://www.tumblr.com/	chrome
-    Current Frame Should Contain	Login
+    Open Browser	https://www.tumblr.com/login?language=pt_BR	chrome
+    Current Frame Should Contain	tumblr
     Capture Page Screenshot
 
 Inserir as credenciais básicas de login (email e senha)
-    Set Focus To Element    locator
-    Input Text    locator    text
-    Set Focus To Element    locator
-    Input Password    locator    password
+    Set Focus To Element    ${input_email}
+    Input Text    ${input_email}    email@gmail.com
+    Set Focus To Element    ${input_password}
+    Input Password    ${input_password}    ${login.password}
 
 Clicar no botão "Entrar"
-    Set Focus To Element	Entrar
-    Click Element	Entrar
+    Click Element    ${login.button_submit_login}
     Sleep	2
-    Set Focus To Element	tela inicial
+    Capture Page Screenshot
 
 Fechar navegador
     Close Browser

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2025-04-12T13:19:58.044306" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="c:\small-daily-challenges\small-daily-challenges\tests\web\login.robot">
+<test id="s1-t1" name="Cenário 2: Login com dados inválidos" line="9">
+<kw name="Dado que o usuário abriu o site na tela de login" owner="login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-12T13:19:58.442714" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/v1/'.</msg>
+<arg>https://www.saucedemo.com/v1/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-12T13:19:58.442347" elapsed="2.638701"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-04-12T13:20:01.353330" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-04-12T13:20:01.081679" elapsed="0.272362"/>
+</kw>
+<status status="PASS" start="2025-04-12T13:19:58.441472" elapsed="2.913112"/>
+</kw>
+<kw name="Quando inserir as credenciais básicas de login (email e senha) inválidas" owner="login">
+<kw name="Set Focus To Element" owner="SeleniumLibrary">
+<arg>${input_email}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-12T13:20:01.356575" elapsed="0.034199"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-12T13:20:01.391551" level="INFO">Typing text 'user_name_invalid' into text field 'name:user-name'.</msg>
+<arg>${input_email}</arg>
+<arg>${user_name_invalid}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-12T13:20:01.391133" elapsed="0.196013"/>
+</kw>
+<kw name="Set Focus To Element" owner="SeleniumLibrary">
+<arg>${input_password}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-12T13:20:01.587608" elapsed="0.025528"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-04-12T13:20:01.614217" level="INFO">Typing password into text field 'name:password'.</msg>
+<msg time="2025-04-12T13:20:01.678524" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${input_password}</arg>
+<arg>${password_invalid}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-12T13:20:01.613593" elapsed="0.124414"/>
+</kw>
+<status status="PASS" start="2025-04-12T13:20:01.355647" elapsed="0.382690"/>
+</kw>
+<kw name="Então clicar no botão &quot;Entrar&quot;" owner="login">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-12T13:20:01.740785" level="INFO">Clicking element '//*[@id="login-button"]'.</msg>
+<arg>${login.button_submit_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-12T13:20:01.739754" elapsed="0.104190"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-12T13:20:03.845411" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-12T13:20:01.844585" elapsed="2.001255"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-04-12T13:20:03.977541" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-04-12T13:20:03.846162" elapsed="0.131797"/>
+</kw>
+<status status="PASS" start="2025-04-12T13:20:01.739168" elapsed="2.239064"/>
+</kw>
+<kw name="E Validar mensagem de erro de login" owner="login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${login.error_mensage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-12T13:20:03.980064" elapsed="0.059446"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-04-12T13:20:04.159777" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-04-12T13:20:04.039932" elapsed="0.120222"/>
+</kw>
+<status status="PASS" start="2025-04-12T13:20:03.979413" elapsed="0.180908"/>
+</kw>
+<status status="PASS" start="2025-04-12T13:19:58.440504" elapsed="5.720568"/>
+</test>
+<status status="PASS" start="2025-04-12T13:19:58.055485" elapsed="6.107757"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

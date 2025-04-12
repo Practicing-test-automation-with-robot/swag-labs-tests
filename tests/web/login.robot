@@ -1,4 +1,5 @@
 *** Settings ***
+Resource    ../../resources//auth/env.resource
 Resource    ../../resources/keywords/login.robot
 
 *** Test Cases ***

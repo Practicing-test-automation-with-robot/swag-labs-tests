@@ -10,6 +10,8 @@ ${input_email}        name:user-name
 ${input_password}     name:password 
 ${user-name}    standard_user
 ${password}    secret_sauce
+${inventory_filter_container}    id:inventory_filter_container
+
 
 # utilizando o XPath:
 &{login}

@@ -45,3 +45,8 @@ E remove produto do carrinho
     Click Button    ${cart.add_to_cart}
     Capture Page Screenshot
 
+E clicar no checkout
+    Wait Until Element Is Visible    ${cart.checkout}
+    Click Element    ${cart.checkout}
+    Wait Until Element Is Visible    ${checkout_screen}
+    Capture Element Screenshot     ${checkout_screen}

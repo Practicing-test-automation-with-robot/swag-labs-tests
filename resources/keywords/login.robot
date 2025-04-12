@@ -1,5 +1,6 @@
 *** Settings ***
 Resource    ../variables/login.robot
+Resource    ../auth/env.resource
 Library    SeleniumLibrary
 
 *** Keywords ***

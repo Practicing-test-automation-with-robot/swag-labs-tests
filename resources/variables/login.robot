@@ -3,15 +3,15 @@ Library    SeleniumLibrary
 
 
 *** Variables ***
-# colocar o identificador do elemento, nome, id...
-# colocar o tipo do elemento ex: input
-# Quando os elementos possuem o id ou o name:
+# Google
+${CHROME_OPTIONS}    --disable-features=PasswordCheck
+
 ${input_email}        name:user-name 
 ${input_password}     name:password 
-${inventory_filter_container}    id:inventory_filter_container
+${initial_screen}    class:main-body
+${logout}    id:logout_sidebar_link
+${login_screen}    class:login_wrapper
 
-
-# utilizando o XPath:
 &{login}
 ...    button_submit_login=//*[@id="login-button"]
 ...    error_mensage=//*[@id="login_button_container"]/div/form/h3

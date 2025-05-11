@@ -1,5 +1,3 @@
----
-
 # 🧪 Swag Labs - Testes Automatizados com Robot Framework
 
 Este repositório contém testes automatizados para o site [Swag Labs](https://www.saucedemo.com/) utilizando o **Robot Framework** com **SeleniumLibrary**.

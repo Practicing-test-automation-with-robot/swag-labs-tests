@@ -1,6 +1,6 @@
 *** Settings ***
+Resource    ../main.resource
 Library    SeleniumLibrary
-
 
 *** Variables ***
 # Google

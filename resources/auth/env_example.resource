@@ -1,3 +1,7 @@
+*** Settings ***
+Resource    ../main.resource
+Library    SeleniumLibrary
+
 *** Variables ***
 ${user_name}        
 ${password}    

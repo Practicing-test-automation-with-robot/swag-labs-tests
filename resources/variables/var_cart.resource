@@ -1,9 +1,8 @@
 *** Settings ***
+Resource    ../main.resource
 Library    SeleniumLibrary
 
-
 *** Variables ***
-
 # Produto
 ${cart_icon}    id:shopping_cart_container
 ${produt_sauce_labs_backpack}    class:inventory_container

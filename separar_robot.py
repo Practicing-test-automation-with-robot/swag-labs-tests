@@ -73,10 +73,14 @@ def separar_secoes(caminho_arquivo, dir_base):
     # Salva keywords
     if keywords:
         caminho_kws = os.path.join(pasta_kws, f'kw_{nome_arquivo}.resource')
+
+        conteudo_kw = cabecalho + '*** Keywords ***\n' + keywords.group(1).strip()
+
+        # Adiciona comentários organizados somente no arquivo keywords
+        conteudo_kw = adicionar_comentarios_organizados(conteudo_kw)
+
         with open(caminho_kws, 'w', encoding='utf-8') as f:
-            f.write(cabecalho)
-            f.write('*** Keywords ***\n')
-            f.write(keywords.group(1).strip())
+            f.write(conteudo_kw)
         print(f"Arquivo de keywords salvo: {caminho_kws}")
         novos_caminhos['keywords'] = os.path.relpath(caminho_kws, dir_base).replace("\\", "/")
 
@@ -147,7 +151,6 @@ def renomear_e_atualizar_main(pasta, arquivos_variaveis, arquivos_keywords):
 
     print("main.resource atualizado com novos caminhos.")
 
-
 # Função para apagar arquivos antigos
 def apagar_arquivos_antigos(diretorio, extensao='.robot'):
     for root, _, files in os.walk(diretorio):
@@ -157,7 +160,57 @@ def apagar_arquivos_antigos(diretorio, extensao='.robot'):
                 os.remove(caminho_arquivo)
                 print(f"❌ Arquivo apagado: {caminho_arquivo}")
 
+# Adcionar comentários para sumarização de arquivos de keywords
+def adicionar_comentarios_organizados(conteudo_arquivo: str) -> str:
+    comentarios = """
+*** Comments ***
+===========================================================================
+Organize suas Keywords utilizando os seguintes grupos de comentários padrões:
 
+    [Flows]       -> Fluxos reutilizáveis e completos de uso do sistema, combinando várias palavras-chave numa sequência lógica de ações.
+
+    [Pages]       -> Palavras-chave específicas de páginas, responsáveis por interações com elementos únicos de cada página.
+
+    [Validations] -> Palavras-chave que realizam validações, assegurando que os resultados estejam corretos e conforme esperado.
+
+===========================================================================
+Sumário: Liste aqui as sessões [Flows], [Pages] e [Validations], destacando o que contém em cada uma, para facilitar a manutenção e compreensão do arquivo.
+"""
+
+    linhas = conteudo_arquivo.splitlines()
+    resultado = []
+    settings_ended = False
+    settings_block = [
+        "*** Settings ***",
+        "Resource    ../main.resource",
+        "Library    SeleniumLibrary"
+    ]
+
+    i = 0
+    while i < len(linhas):
+        linha = linhas[i]
+        resultado.append(linha)
+
+        if not settings_ended:
+            bloco = linhas[i:i+3]
+            bloco_match = all(
+                bloco[j].strip().lower() == settings_block[j].lower()
+                for j in range(min(len(bloco), 3))
+            )
+            if bloco_match:
+                resultado = resultado[:-1]
+                resultado.extend(settings_block)
+                resultado.append("")
+                resultado.append(comentarios.strip())
+                i += 2
+                settings_ended = True
+        i += 1
+
+    if not settings_ended:
+        print("⚠️ Atenção: bloco Settings não encontrado exatamente, adicionando comentário no início do arquivo.")
+        return comentarios.strip() + "\n\n" + conteudo_arquivo
+
+    return "\n".join(resultado)
 
 # Função principal para executar o script
 def main():
